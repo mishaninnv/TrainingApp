@@ -1,0 +1,18 @@
+﻿<Window x:Class="UserInterfase.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserInterfase"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="trainingsButton" Content="Тренировки" HorizontalAlignment="Left" Margin="362,134,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="exerciseButton" Content="Упражнения" HorizontalAlignment="Left" Margin="362,240,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>
