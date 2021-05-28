@@ -7,7 +7,6 @@ namespace BusinessLogic.Controllers
     {
         public BLContext db { get; } = BLContext.DB;
 
-
         public void Add(string name, string description, MuscleGroup muscle)
         {
             // TODO: предупреждаем об ошибке
@@ -18,22 +17,22 @@ namespace BusinessLogic.Controllers
             db.SaveChanges();
         }
 
-        public void Change(Exercise exercise, string name, string description, MuscleGroup muscle)
+        public void Change(Exercise exercise, string newName, string newDescription, MuscleGroup newMuscle)
         {
             // TODO: предупреждаем об ошибке
-            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(description) || muscle == null) return;
+            if (string.IsNullOrEmpty(newName) || string.IsNullOrEmpty(newDescription) || newMuscle == null) return;
             if (exercise == null) return;
-            if (db.Exercises.FirstOrDefault(s => s.Name == name) != null) return;
+            if (db.Exercises.FirstOrDefault(s => s.Name == newName) != null) return;
 
-            exercise.Name = name;
-            exercise.Description = description;
-            exercise.MuscleGroup = muscle;
+            exercise.Name = newName;
+            exercise.Description = newDescription;
+            exercise.MuscleGroup = newMuscle;
             db.SaveChanges();
         }
 
         public void Delete(Exercise exercise)
         {
-            if (db.Exercises.Contains(exercise))
+            if (db.Exercises.FirstOrDefault(s => s.Name == exercise.Name) != null)
             {
                 db.Exercises.Remove(exercise);
                 db.SaveChanges();
