@@ -5,14 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserInterfase"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Твоя тренировка" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="trainingsButton" Content="Тренировки" HorizontalAlignment="Left" Margin="362,134,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="exerciseButton" Content="Упражнения" HorizontalAlignment="Left" Margin="362,240,0,0" VerticalAlignment="Top" Width="75"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
+        <Button x:Name="Training" Content="Тренировка" Grid.Column="0" Grid.Row="0"></Button>
+        <Button x:Name="Exercise" Content="Упражнение" Grid.Column="0" Grid.Row="1"></Button>
+        <Window Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Title="Cписок ...(чего добавлять динамически)">
+            <StackPanel x:Name="EntitiesList"></StackPanel>
+        </Window>
+        <Window Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" Title="Описание (чего добавлять динамически)">
+            <StackPanel x:Name="Description"></StackPanel>
+        </Window>
     </Grid>
 </Window>
